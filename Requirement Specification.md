@@ -31,7 +31,7 @@ To create a web application that manages friends through CRUD (Create, Read, Upd
 - Deployment on Render for free hosting.
 
 ## Current Situation
-Working on it.
+The project is currently in development with Flask (backend) and React (frontend). Chakra UI is being used for the design, supporting responsive layout and light/dark mode. SQLite is set up as the database, and SQLAlchemy is configured for ORM.
 
 ## Goal
 To deploy the app, making it accessible and usable for a broader audience while maintaining scalability.
