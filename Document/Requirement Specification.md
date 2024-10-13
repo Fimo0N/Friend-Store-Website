@@ -45,3 +45,4 @@ To deploy the app, making it accessible and usable for a broader audience while 
 - Responsive design using Chakra UI.
 - App must support both light and dark modes.
 - The app should be deployed on Render with free hosting.
+
