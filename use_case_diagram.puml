@@ -1,0 +1,19 @@
+@startuml
+
+actor User as "User"
+
+rectangle "Friend Store Website" {
+    usecase AddFriend as "Add Friend"
+    usecase ViewFriends as "View Friends"
+    usecase EditFriend as "Edit Friend"
+    usecase DeleteFriend as "Delete Friend"
+    usecase ToggleTheme as "Toggle Theme (Light/Dark)"
+}
+
+User --> AddFriend
+User --> ViewFriends
+User --> EditFriend
+User --> DeleteFriend
+User --> ToggleTheme
+
+@enduml
