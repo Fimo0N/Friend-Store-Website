@@ -1,19 +1,55 @@
 @startuml
-
 actor User as "User"
 
+
 rectangle "Friend Store Website" {
-    usecase AddFriend as "Add Friend"
-    usecase ViewFriends as "View Friends"
-    usecase EditFriend as "Edit Friend"
-    usecase DeleteFriend as "Delete Friend"
-    usecase ToggleTheme as "Toggle Theme (Light/Dark)"
+
+   
+
+    rectangle "Friend Management" {
+        usecase AddFriend as "Add Friend"
+        usecase ViewFriends as "View Friends"
+        usecase EditFriend as "Edit Friend"
+        usecase DeleteFriend as "Delete Friend"
+        usecase SearchFriends as "Search Friends"
+        usecase ViewFriendDetails as "View Friend Details"
+  
+       
+    }
+
+    rectangle "Settings " {
+        usecase ToggleTheme as "Toggle Theme (Light/Dark)"
+        usecase UpdateProfile as "Update Profile"
+        usecase Logout as "Logout"
+        usecase ResetPassword as " ResetPassword "
+        usecase Login as "Login"  
+        usecase Register as "Register"
+        
+        
+    }
+
+   
+    
+  
+    
 }
+
+
+
+
 
 User --> AddFriend
 User --> ViewFriends
 User --> EditFriend
 User --> DeleteFriend
-User --> ToggleTheme
+User --> SearchFriends
+User --> ViewFriendDetails
+User--> ResetPassword
+User--> Login
+User--> Logout
+User--> Register
 
+
+User --> ToggleTheme
+User --> UpdateProfile
 @enduml

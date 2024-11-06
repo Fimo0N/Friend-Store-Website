@@ -1,5 +1,4 @@
 @startuml
-
 entity "Friend" {
     * id : Integer <<PK>>
     * name : String
@@ -7,12 +6,18 @@ entity "Friend" {
     * description : Text
     * gender : String
     img_url : String
+    + created_at : DateTime
+    + updated_at : DateTime
 }
 
 entity "User" {
     * user_id : Integer <<PK>>
-    username : String
+    username : String <<UNIQUE>>
     password : String
+    email : String <<UNIQUE>>
+    
+   
+    
 }
 
 entity "Friendship" {
@@ -20,9 +25,14 @@ entity "Friendship" {
     - user_id : Integer <<FK>>
     - friend_id : Integer <<FK>>
     friendship_date : Date
+    status : String <<enum>>
 }
+
+
+
+
+
 
 User ||--o{ Friendship : "user_id"
 Friend ||--o{ Friendship : "friend_id"
-
 @enduml
