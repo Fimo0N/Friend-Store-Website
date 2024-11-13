@@ -15,9 +15,6 @@ entity "User" {
     username : String <<UNIQUE>>
     password : String
     email : String <<UNIQUE>>
-    
-   
-    
 }
 
 entity "Friendship" {
@@ -27,11 +24,6 @@ entity "Friendship" {
     friendship_date : Date
     status : String <<enum>>
 }
-
-
-
-
-
 
 User ||--o{ Friendship : "user_id"
 Friend ||--o{ Friendship : "friend_id"

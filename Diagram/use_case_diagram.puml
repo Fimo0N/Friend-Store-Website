@@ -1,55 +1,53 @@
 @startuml
 actor User as "User"
-
+actor Newuser as "New user"
 
 rectangle "Friend Store Website" {
 
-   
+    rectangle "Homepage" {
+        usecase ViewInfo as "View Homepage Information"
+        usecase Register as "Register as Client"
+    }
 
     rectangle "Friend Management" {
         usecase AddFriend as "Add Friend"
         usecase ViewFriends as "View Friends"
         usecase EditFriend as "Edit Friend"
         usecase DeleteFriend as "Delete Friend"
-        usecase SearchFriends as "Search Friends"
-        usecase ViewFriendDetails as "View Friend Details"
-  
-       
+        usecase SearchFriend as "Search Friend"
     }
 
-    rectangle "Settings " {
+    rectangle "Settings" {
         usecase ToggleTheme as "Toggle Theme (Light/Dark)"
         usecase UpdateProfile as "Update Profile"
         usecase Logout as "Logout"
-        usecase ResetPassword as " ResetPassword "
-        usecase Login as "Login"  
-        usecase Register as "Register"
-        
-        
+        usecase ResetPassword as "Reset Password"
+        usecase Login as "Login"
     }
-
-   
-    
-  
-    
 }
 
+package "Database" {
+    note right of Register
+        Stores user information
+    end note
+}
 
+Newuser --> ViewInfo
+Newuser --> Register
 
-
-
+User --> ViewInfo
 User --> AddFriend
 User --> ViewFriends
 User --> EditFriend
 User --> DeleteFriend
-User --> SearchFriends
-User --> ViewFriendDetails
-User--> ResetPassword
-User--> Login
-User--> Logout
-User--> Register
-
-
 User --> ToggleTheme
 User --> UpdateProfile
+User --> Logout
+User --> ResetPassword
+User --> Login
+User --> SearchFriend
+
+Register --> Database : "Store User Data"
+Login --> ViewFriends : "Login required" 
+Logout --> ViewInfo : "Logout redirects to Homepage"
 @enduml
