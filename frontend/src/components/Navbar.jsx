@@ -3,6 +3,7 @@ import { Box, Button, Container, Flex, Text, useColorMode, useColorModeValue } f
 import { IoMoon } from "react-icons/io5";
 import { LuSun } from "react-icons/lu";
 import CreateUserModal from "./CreateUserModal";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Navbar = ({ user, setUser, setUsers }) => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -12,6 +13,7 @@ const Navbar = ({ user, setUser, setUsers }) => {
     setUsers([]); // Clear users list
     console.log("User logged out.");
   };
+  const navigate = useNavigate();
 
   return (
     <Container maxW={"1500px"}>
@@ -29,6 +31,9 @@ const Navbar = ({ user, setUser, setUsers }) => {
 
           {/* Right side */}
           <Flex gap={3} alignItems={"center"}>
+            <Button onClick={() => navigate("/aboutus")} colorScheme="teal" variant="solid">
+              ABOUT US
+            </Button>
             <Button onClick={toggleColorMode}>
               {colorMode === "light" ? <IoMoon /> : <LuSun size={20} />}
             </Button>
