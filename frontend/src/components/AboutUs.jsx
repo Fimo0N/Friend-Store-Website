@@ -1,17 +1,9 @@
 import React from "react";
-
-// import { Container, Input, Button, Stack, Text, Link } from "@chakra-ui/react";
-// import { useNavigate, useLocation } from "react-router-dom";
-
-// const BASE_URL = "http://127.0.0.1:5000/api";
-
-
-
 import { Box, Heading, Text, Stack, VStack, Image, Container, Divider, Link, Grid } from "@chakra-ui/react";
 
 const AboutUs = () => {
   return (
-    <Box bgGradient="linear(to-r, blue.500, red.500)" color="white" minH="100vh" py={10} display="flex" flexDirection="column">
+    <Box bgGradient="linear(to-r, teal.500, green.500)" color="white" minH="100vh" py={10} display="flex" flexDirection="column">
       <Container maxW="container.md" textAlign="center" mb={10}>
         <Heading as="h1" size="2xl" mb={6}>
           "Do you struggle with remembering your friends?"
@@ -110,7 +102,7 @@ const AboutUs = () => {
               Meet Our Team
             </Heading>
             <Grid templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }} gap={8}>
-              {["Kinnalone Philavong", "Talha Kamran", "Abe Shosei", "Amine Ait Mouss", "Guoyuan Liao"].map((member, index) => (
+              {["John Doe", "Jane Smith", "Michael Lee", "Emily Davis", "Chris Johnson"].map((member, index) => (
                 <VStack key={index} spacing={4} bg="white" color="black" borderRadius="lg" boxShadow="md" p={6}>
                   <Image
                     src={`https://via.placeholder.com/150?text=${member.split(" ").join("+")}`}
@@ -122,9 +114,21 @@ const AboutUs = () => {
                     {member}
                   </Text>
                   <Text fontSize="sm" color="gray.600">
-                    Contact: <Link href={`mailto:${member.split(" ").join(".").toLowerCase()}@friendstore.com`} color="teal.500">
+                    Email: <Link href={`mailto:${member.split(" ").join(".").toLowerCase()}@friendstore.com`} color="teal.500">
                       {member.split(" ").join(".").toLowerCase()}@friendstore.com
                     </Link>
+                  </Text>
+                  <Text fontSize="sm" color="gray.600">
+                    Facebook: <Link href="#" color="teal.500">facebook.com/{member.split(" ").join(".").toLowerCase()}</Link>
+                  </Text>
+                  <Text fontSize="sm" color="gray.600">
+                    Instagram: <Link href="#" color="teal.500">instagram.com/{member.split(" ").join(".").toLowerCase()}</Link>
+                  </Text>
+                  <Text fontSize="sm" color="gray.600">
+                    GitHub: <Link href="#" color="teal.500">github.com/{member.split(" ").join(".").toLowerCase()}</Link>
+                  </Text>
+                  <Text fontSize="sm" color="gray.600">
+                    LinkedIn: <Link href="#" color="teal.500">linkedin.com/in/{member.split(" ").join(".").toLowerCase()}</Link>
                   </Text>
                 </VStack>
               ))}

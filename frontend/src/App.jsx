@@ -3,7 +3,8 @@ import { Stack, Text, Container } from "@chakra-ui/react";
 import Navbar from "./components/Navbar";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import UserGrid from "./components/UserGrid";
+import UserGrid from "./components/UserGrid"
+import Aboutus from "./components/AboutUs"
 import ResetPassword from "./components/ResetPassword"; // Import ResetPassword component
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
@@ -88,6 +89,16 @@ function App() {
                 )
               }
             />
+            <Route
+              path="/aboutus"
+              element={(
+                  <Aboutus setUser={setUser} />
+
+    
+                )
+              }
+            />
+
           </Routes>
         </Container>
       </Stack>
